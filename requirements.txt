@@ -1,0 +1,9 @@
+torch
+numpy
+huggingface_hub
+datasets
+transformers
+tqdm
+peft
+bitsandbytes
+wandb
