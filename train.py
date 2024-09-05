@@ -25,6 +25,8 @@ from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training, re
 import fim
 
 hf_token = os.getenv("HF_TOKEN")
+if hf_token is None:
+    hf_token = os.getenv("HUGGINGFACE_HUB_TOKEN")
 
 # Define and parse arguments.
 @dataclass
