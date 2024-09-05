@@ -44,7 +44,7 @@ class ModelArguments:
     lora_dropout: Optional[float] = field(default=0.1)
     lora_r: Optional[int] = field(default=64)
     lora_target_modules: Optional[str] = field(
-        default="q_proj,k_proj,v_pcartersusi/zig-LLaMaroj,o_proj,down_proj,up_proj,gate_proj",
+        default="q_proj,k_proj,v_proj,o_proj,down_proj,up_proj,gate_proj",
         metadata={
             "help": "comma separated list of target modules to apply LoRA layers to"
         },
@@ -418,7 +418,7 @@ def main(model_args, data_args, training_args):
     # Set seed for reproducibility
     set_seed(training_args.seed)
 
-    repo_name = "cartersusi/zig-LLaMa"
+    repo_name = "cartersusi/zig-llama"
     repo = Repository(local_dir=".", clone_from=repo_name, use_auth_token=hf_token)
 
     # load the tokenizer
